@@ -20,14 +20,11 @@ DWORD GETPROCID(const wchar_t* procname)
 				}
 
 			} while (Process32Next(hsnap,&procEntry));
-			
 		}
 	}
 	CloseHandle(hsnap); // stops memory leaks 
 	return procid;
 }
-
-
 uintptr_t GetModuleBaseAddress(DWORD procid, const wchar_t* modname)
 {
 	uintptr_t modBaseADDr = 0 ;
@@ -41,15 +38,12 @@ uintptr_t GetModuleBaseAddress(DWORD procid, const wchar_t* modname)
 				if (!_wcsicmp(modEntry.szModule, modname)) {
 					modBaseADDr = (uintptr_t)modEntry.modBaseAddr;
 				}
-			
 			} while (Module32Next(hsnap,&modEntry));
 		}
 	}
 	CloseHandle(hsnap);
 	return modBaseADDr;
 }
-
-
 uintptr_t FindDMAddy(HANDLE hproc, uintptr_t ptr, std::vector<unsigned int> offsets) 
 // stands fotr dynamic memory allocation
 {
@@ -60,5 +54,4 @@ uintptr_t FindDMAddy(HANDLE hproc, uintptr_t ptr, std::vector<unsigned int> offs
 		addr += offsets[i];
 	}
 	return addr;
-
 }
