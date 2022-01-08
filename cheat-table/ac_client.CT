@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"grenade"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"gre ammount ptr--&gt; 1 (valid)"</Description>
+          <LastState Value="0" RealAddress="00DCA900"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>"ac_client.exe"+00109B74</Address>
+          <Offsets>
+            <Offset>158</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"health"</Description>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"verified HEALTH POINTER"</Description>
+          <LastState Value="100" RealAddress="0C387414"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"ac_client.exe"+0010FC84</Address>
+          <Offsets>
+            <Offset>27C</Offset>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"fmg"</Description>
+      <LastState Value="0" RealAddress="0C397224"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0C397224</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"xyz"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"facing direction ptr"</Description>
+          <LastState Value="5.561221111E-39" RealAddress="00DCA9BC"/>
+          <VariableType>Float</VariableType>
+          <Address>"ac_client.exe"+0010F418</Address>
+          <Offsets>
+            <Offset>104</Offset>
+            <Offset>50</Offset>
+            <Offset>1E4</Offset>
+            <Offset>48</Offset>
+            <Offset>1D8</Offset>
+            <Offset>58</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"x ptr"</Description>
+          <LastState Value="39.60110092" RealAddress="00DCA7DC"/>
+          <VariableType>Float</VariableType>
+          <Address>"ac_client.exe"+00109B74</Address>
+          <Offsets>
+            <Offset>34</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"y ptr "</Description>
+          <LastState Value="0" RealAddress="00DCA7E4"/>
+          <VariableType>Float</VariableType>
+          <Address>"ac_client.exe"+00109B74</Address>
+          <Offsets>
+            <Offset>3C</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"zptr"</Description>
+          <LastState Value="89.30543518" RealAddress="00DCA7E0"/>
+          <VariableType>Float</VariableType>
+          <Address>"ac_client.exe"+00109B74</Address>
+          <Offsets>
+            <Offset>38</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="80000008">
+      <Description>No description</Description>
+      <AddressString>ac_client.exe+3339B</AddressString>
+      <Before>
+        <Byte>3B</Byte>
+        <Byte>75</Byte>
+        <Byte>14</Byte>
+        <Byte>74</Byte>
+        <Byte>28</Byte>
+      </Before>
+      <Actual>
+        <Byte>8B</Byte>
+        <Byte>0D</Byte>
+        <Byte>84</Byte>
+        <Byte>FC</Byte>
+        <Byte>50</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>04</Byte>
+        <Byte>B1</Byte>
+        <Byte>83</Byte>
+        <Byte>38</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>No description</Description>
+      <AddressString>ac_client.exe+38930</AddressString>
+      <Before>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>8B</Byte>
+        <Byte>15</Byte>
+        <Byte>84</Byte>
+        <Byte>FC</Byte>
+        <Byte>50</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>83</Byte>
+        <Byte>EC</Byte>
+        <Byte>1C</Byte>
+        <Byte>55</Byte>
+        <Byte>56</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>No description</Description>
+      <AddressString>ac_client.exe+6368C</AddressString>
+      <Before>
+        <Byte>33</Byte>
+        <Byte>DB</Byte>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>04</Byte>
+      </Before>
+      <Actual>
+        <Byte>E9</Byte>
+        <Byte>6F</Byte>
+      </Actual>
+      <After>
+        <Byte>C9</Byte>
+        <Byte>57</Byte>
+        <Byte>00</Byte>
+        <Byte>90</Byte>
+        <Byte>68</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>
