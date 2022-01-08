@@ -1,7 +1,4 @@
 #include "proc.h"
-
-
-
 DWORD GETPROCID(const wchar_t* procname)
 {
 	DWORD procid = 0;
@@ -18,7 +15,6 @@ DWORD GETPROCID(const wchar_t* procname)
 					procid = procEntry.th32ProcessID;
 					break;
 				}
-
 			} while (Process32Next(hsnap,&procEntry));
 		}
 	}
