@@ -6,10 +6,7 @@
 #include<string>
 
 int main()
-
 {
-	//variable definitions
-	//std::vector<unsigned int> OffsetsX;
 	HANDLE hProcess = 0;
 	int ammoValue = 0, health = 0, grenadeAmmo = 0; 
 	int newAmmo = 657, newHealth = 0, newGrenadeAmmo = 0;
@@ -20,40 +17,14 @@ int main()
 	// also kept each individual one above so it is easier for later debugging
 	std::vector<std::vector<unsigned int>> OFFSETS = { ammoOffsets,healthOffsets,grenadeAMMOOffsets };
 	std::vector <uintptr_t> resolvedPointers = {};
-
-	// get process id
 	DWORD procId = GETPROCID(L"ac_client.exe");
-
-	//get module base addr
 	uintptr_t ModuleBase = GetModuleBaseAddress(procId, L"ac_client.exe");
-
-	//get handle to process
-	
 	hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
-
-	//resolve base pointer chain for 
 	uintptr_t dynamicPtrBaseAddr = ModuleBase + 0x10f4f4;
-
-	//std::cout << "DYNAMIC PTR BASE =" << "0x" << std::hex << dynamicPtrBaseAddr << "\n";
-	
-
-	//resolve pointer chains 
 	for (int index = 0; index < OFFSETS.size(); index++) 
 	{
-		// OFFSETS[index];
-	//	std::cout << index << "\n"<< FindDMAddy(hProcess, dynamicPtrBaseAddr, OFFSETS[index]) << "\n";
 		resolvedPointers.push_back( FindDMAddy(hProcess, dynamicPtrBaseAddr, OFFSETS[index]));
 	}
-	
-	//std::cout << "AMMO ADDR =" << "0x" << std::hex << ammoAddr << "\n";
-
-	//read  x value
-	//for (int index = 0; index < variables[0].size(); index++) {
-	//	std::cout << "\n" << index <<"\n"<<resolvedPointers[index];
-	//	ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[index], &variables[0][index], sizeof(variables[0][index]), nullptr);
-	//	ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[1], &health, sizeof(health), nullptr);
-	
-	//ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[0], &ammoValue, sizeof(ammoValue), nullptr);
 	while (true) 
 	{
 		for (int index = 0; index < variables[0].size(); index++) {
@@ -61,7 +32,6 @@ int main()
 			ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[index], &variables[0][index], sizeof(variables[0][index]), nullptr);
 			ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[1], &health, sizeof(health), nullptr);
 		}
-		//ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[1], &health, sizeof(health), nullptr);
 		system("color a");
 
 		std::cout << "CURRENT AMMO\t\t[   " << std::dec << variables[0][0] <<"\t ]" << "\n";
@@ -87,9 +57,6 @@ int main()
 			std::cin >> newAmmo;
 			std::cout << "\n";
 			WriteProcessMemory(hProcess, (BYTE*)resolvedPointers[0], &newAmmo, sizeof(newAmmo), nullptr);
-			//read x value again
-			//ReadProcessMemory(hProcess, (BYTE*)resolvedPointers[0], &variables[0][0], sizeof(variables[0][0]), nullptr);
-			//std::cout << "CURRENT AMMO --> " << std::dec << ammoValue << "\n";
 		}
 		if (choice == 2)
 		{
