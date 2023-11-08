@@ -7,3 +7,7 @@ created using visual studio 2022 Free edition
 
 offsets and pointers where achieved using cheat engine
 the cheat-table is linked in the folder: cheat-table
+
+This was a passion project, to see if I could write a program to access the pointers of another program and change their value. 
+To do this I used a open source game Assault cube and I used cheat engine to obtain the addresses. 
+I also used visual studio code 2022 community edition to write the code. 
